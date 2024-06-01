@@ -10,17 +10,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Настройка CORS
-const corsOptions = {
-  origin: "http://example.com", // Замени на нужный домен
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
+// const corsOptions = {
+//   origin: "http://example.com", // Замени на нужный домен
+//   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   allowedHeaders: ["Content-Type", "Authorization"],
+// };
 
 app.use(morgan("tiny"));
-app.use(cors(corsOptions));
+app.use(cors());
+//app.use(cors(corsOptions));
 app.use(express.json());
 
 let acceptedOrders = [];
